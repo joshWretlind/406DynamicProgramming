@@ -1,0 +1,53 @@
+Type position(index, length):
+-Index
+-Length
+
+
+Palindrome(string sequence)
+	n = length of sequence
+	position p(0,0);
+	for i=0...n
+		evenExpansion = expand(i,0)
+		oddExpansion = expand(i,1)
+		
+		if (evenExpansion > p.length)
+			p.index = i
+			p.length = evenExpansion
+		else if (oddExpansion > p.length)
+			p.index = i
+			p.length = oddExpansion
+		end
+		
+	end
+end
+
+expand(string sequence, int index, int length)
+	//even expansion?
+	if abs(index + (length/2)) is not a valid index in sequence
+		return length
+	end
+	
+	//oddexpansion?
+	if abs(index - (length/2) is not a valid index in sequence AND length is not 0
+		return length
+	end
+	
+	character at index -> i
+	
+	if length is 0
+			pull character right of index -> r
+			if i == r
+				eturn expand(sequence, index, 2)
+			else
+				return length
+			end
+	else
+		pull character at (index + length/2) -> r
+		pull character at(index - length/2) -> l
+		if r == l
+			return expand(sequence, index, length + 2)
+		else
+			return length
+		end		
+	end
+end
