@@ -1,0 +1,23 @@
+global int length
+global string largest
+
+Match(string foo)
+	for i = 0...len(foo) do
+		remove ith character -> checkString
+
+		//We can check if we have already precomputed a palindrome check on checkString here
+		//	against some global data structure holding a subsequence and it's state of being a
+		//	palindrome or not.
+
+		if (checkString a Palindrome) do
+			if len(checkString) > length do
+				largest = checkString
+				length = len(checkstring)
+			end
+		end
+
+		Match(checkString)
+	end
+end
+
+//largest + length now contain the largest subsequence

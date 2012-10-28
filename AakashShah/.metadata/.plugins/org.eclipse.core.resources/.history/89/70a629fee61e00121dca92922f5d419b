@@ -1,0 +1,48 @@
+
+public class LongestSubsequence {
+	
+	private String data;
+	private int len;
+	
+	private int[][] subdata;
+	
+	public LongestSubsequence(char[] data) {
+		this.data = data;
+		this.len = data.length();
+		
+		subdata = new int[len][len];
+		initTable();
+	}
+	public void initTable() {
+		for (int i = 0; i < len; ++i)
+			subdata[i][i] = 1;
+	}
+	
+	public int max(int x, int y) {
+		if (x > y)
+			return x;
+		return y;
+	}
+	
+	public void compute() {
+		for (int cl = 2; cl <= len; ++cl) {
+			for (int i = 0; i < (len - cl + 1); ++i) {
+				int j = i + cl -1;
+				
+				if (data.charAt(i) == data.charAt(j) && cl == 1)
+					subdata[i][j] = 2;
+				else if (data.charAt(i) == data.charAt(j))
+					subdata[i][j] = subdata[i+1][j-1] + 2;
+				else
+					subdata[i][j] = max(subdata[i][j-1], subdata[i+1][j]);
+			}
+		}
+		System.out.println(subdata[0][len-1]);
+	}
+	
+	public static void main(String[] args) {
+		char[] data = "TEST".toCharArray();
+
+	}
+
+}

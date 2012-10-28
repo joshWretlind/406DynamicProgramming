@@ -1,0 +1,19 @@
+
+public class LongestSubsequence {
+	
+	private String data;
+	private int len;
+	
+	private int[][] subdata;
+	
+	public LongestSubsequence(String data) {
+		this.data = data;
+		this.len = data.length();
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}
