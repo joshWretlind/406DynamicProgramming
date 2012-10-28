@@ -1,0 +1,63 @@
+
+public class LongestSubsequence {
+	
+	private char[] data;
+	private int len;
+	
+	private int[][] subdata;
+	
+	public LongestSubsequence(char[] data) {
+		this.data = data;
+		this.len = data.length;
+		
+		subdata = new int[len][len];
+		initTable();
+	}
+	public void initTable() {
+		for (int i = 0; i < len; ++i)
+			subdata[i][i] = 1;
+	}
+	
+	public int max(int x, int y) {
+		if (x > y)
+			return x;
+		return y;
+	}
+	
+	public void compute() {
+		for (int cl = 1; cl <= len; ++cl) {
+			for (int i = 0; i < (len - cl); ++i) {
+				int j = i + cl;
+				
+				if (data[i] == data[j] && cl == 1)
+					subdata[i][j] = 2;
+				else if (data[i] == data[j])
+					subdata[i][j] = subdata[i+1][j-1] + 2;
+				else
+					subdata[i][j] = max(subdata[i][j-1], subdata[i+1][j]);
+			}
+		}
+	}
+	
+	public void printSubData() {
+		for (int i = 0; i < len; ++i) {
+			System.out.print(data[i] + " | ");
+		}
+		for (int i = 0; i < len; ++i) {
+			System.out.print(data[i] + " | ");
+			for (int j = 0; j < len; ++j) {
+				System.out.print(subdata[i][j] + " | ");
+			}
+			System.out.print("\n");
+		}
+	
+	}
+	public static void main(String[] args) {
+		char[] data = "TESEBT".toCharArray();
+		LongestSubsequence ls = new LongestSubsequence(data);
+		ls.compute();
+		ls.printSubData();
+
+	}
+
+}

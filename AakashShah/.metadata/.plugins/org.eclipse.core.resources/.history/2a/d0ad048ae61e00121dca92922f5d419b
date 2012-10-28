@@ -1,0 +1,34 @@
+
+public class LongestSubsequence {
+	
+	private String data;
+	private int len;
+	
+	private int[][] subdata;
+	
+	public LongestSubsequence(String data) {
+		this.data = data;
+		this.len = data.length();
+		
+		subdata = new int[len][len];
+		initTable();
+	}
+	public void initTable() {
+		for (int i = 0; i < len; ++i)
+			subdata[i][i] = 1;
+	}
+	
+	public void compute() {
+		for (int cl = 2; cl <= len; ++cl) {
+			for (int i = 0; i < (len - cl + 1); ++i) {
+				
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}
