@@ -6,7 +6,7 @@ public class Cell {
     public int value;
     public Cell parent;
     public char character;
-    public int moveToHere ;
+    public int moveToHere = -1 ;
     
     public Cell(){
     	value = 0;

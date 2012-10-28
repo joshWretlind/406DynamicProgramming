@@ -1,0 +1,31 @@
+
+package JoshWretlind;
+
+/**
+ * Insert your comments here
+ * @author Josh Wretlind
+ */
+public class Main {
+
+	public static void main(String [] args){    
+        Palin p = new Palin();
+        /*
+        p.calcPalin("acgtgtcaaaatcg");
+        p.calcPalin("acabtaca");
+        p.calcPalin("alakazam");
+        p.calcPalin("tada");
+        p.calcPalin("caac");
+        p.calcPalin("woot");
+        p.calcPalin("abcdcb");
+        p.calcPalin("abcbab");
+        p.calcPalin("thisisatest");
+        p.calcPalin("doesthiswork");
+        p.calcPalin("acabbaca");
+        p.calcPalin("asdfghjkjhfshiii");
+        p.calcPalin("a");
+        p.calcPalin("aa");
+        p.calcPalin("asjdav");
+        */
+        p.calcPalin("aaaacbcaa");
+    }
+}

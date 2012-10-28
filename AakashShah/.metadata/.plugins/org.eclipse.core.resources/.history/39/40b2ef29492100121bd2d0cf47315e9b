@@ -1,0 +1,32 @@
+
+package JoshWretlind;
+
+public class Cell {
+
+    public int value;
+    public Cell parent;
+    public char character;
+    public int moveToHere ;
+    
+    public int x;
+    public int y;
+    
+    public Cell(int x, int y){
+    	this.x = x;
+    	this.y = y;
+    	value = 0;
+    	parent = null;
+    	character = ' ';
+    }
+    
+    public Cell(int value){
+    	this.value = value;
+    }
+    
+    @Override
+    public String toString(){
+    	if (parent != null)
+    		return chacter + "(" + parent.x + ", " + parent.y + ")";
+    	return "";
+    }
+}

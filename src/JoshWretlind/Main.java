@@ -9,7 +9,9 @@ public class Main {
 
 	public static void main(String [] args){    
         Palin p = new Palin();
+        
         p.calcPalin("acgtgtcaaaatcg");
+        
         p.calcPalin("acabtaca");
         p.calcPalin("alakazam");
         p.calcPalin("tada");
@@ -25,5 +27,9 @@ public class Main {
         p.calcPalin("aa");
         p.calcPalin("asjdav");
         p.calcPalin("aaaacbcaa");
+        p.calcPalin("abcdefghijklmnoa");
+        
+        
+        
     }
 }
